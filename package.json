@@ -1393,12 +1393,6 @@
             "type": "object",
             "title": "Jupyter",
             "properties": {
-                "jupyter.experiments.enabled": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "%jupyter.configuration.jupyter.experiments.enabled.description%",
-                    "scope": "machine"
-                },
                 "jupyter.showVariableViewWhenDebugging": {
                     "type": "boolean",
                     "default": false,
@@ -1425,54 +1419,6 @@
                         "%jupyter.configuration.jupyter.logging.level.trace%"
                     ],
                     "description": "%jupyter.configuration.jupyter.logging.level.description%"
-                },
-                "jupyter.experiments.optInto": {
-                    "type": "array",
-                    "default": [],
-                    "items": {
-                        "enum": [
-                            "DoNotWaitForZmqPortsToBeUsed"
-                        ]
-                    },
-                    "markdownDescription": "%jupyter.configuration.jupyter.experiments.optInto.markdownDescription%",
-                    "scope": "application"
-                },
-                "jupyter.experiments.optOutFrom": {
-                    "type": "array",
-                    "default": [],
-                    "items": {
-                        "enum": [
-                            "DoNotWaitForZmqPortsToBeUsed"
-                        ]
-                    },
-                    "markdownDescription": "%jupyter.configuration.jupyter.experiments.optOutFrom.markdownDescription%",
-                    "scope": "application"
-                },
-                "jupyter.widgetScriptSources": {
-                    "type": "array",
-                    "default": [],
-                    "items": {
-                        "oneOf": [
-                            {
-                                "type": "string",
-                                "const": "jsdelivr.com",
-                                "description": "%jupyter.configuration.jupyter.widgetScriptSources.items.enumDescriptions.0%"
-                            },
-                            {
-                                "type": "string",
-                                "const": "unpkg.com",
-                                "description": "%jupyter.configuration.jupyter.widgetScriptSources.items.enumDescriptions.1%"
-                            },
-                            {
-                                "type": "string",
-                                "description": "%jupyter.configuration.jupyter.widgetScriptSources.items.custom%",
-                                "format": "uri"
-                            }
-                        ]
-                    },
-                    "uniqueItems": true,
-                    "markdownDescription": "%jupyter.configuration.jupyter.widgetScriptSources.markdownDescription%",
-                    "scope": "resource"
                 },
                 "jupyter.askForLargeDataFrames": {
                     "type": "boolean",
@@ -1592,11 +1538,6 @@
                     "default": true,
                     "description": "%jupyter.configuration.jupyter.enableAutoMoveToNextCell.description%",
                     "scope": "resource"
-                },
-                "jupyter.allowUnauthorizedRemoteConnection": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "%jupyter.configuration.jupyter.allowUnauthorizedRemoteConnection.description%"
                 },
                 "jupyter.interactiveWindow.codeLens.commands": {
                     "type": "string",
