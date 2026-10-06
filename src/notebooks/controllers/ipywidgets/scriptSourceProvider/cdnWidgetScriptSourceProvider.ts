@@ -111,6 +111,8 @@ export class CDNWidgetScriptSourceProvider implements IWidgetScriptSourceProvide
      * Whether the module is available on the CDN.
      */
     public async isOnCDN(moduleName: string): Promise<boolean> {
+        // Corporate build: no CDN probing — never check unpkg.com/jsdelivr.com.
+        return false;
         const key = `MODULE_VERSION_ON_CDN_${moduleName}`;
         if (this.isOnCDNCache.has(key)) {
             return this.isOnCDNCache.get(key)!;
@@ -145,6 +147,8 @@ export class CDNWidgetScriptSourceProvider implements IWidgetScriptSourceProvide
         moduleVersion: string,
         isWebViewOnline?: boolean
     ): Promise<WidgetScriptSource> {
+        // Corporate build: widget script loading from public CDNs disabled — no prompts, no downloads.
+        return { moduleName };
         // If the webview is not online, then we cannot use the CDN.
         if (isWebViewOnline === false) {
             logger.ci(`Webview is offline, cannot use CDN for ${moduleName}`);
