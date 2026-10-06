@@ -11,6 +11,8 @@ let isOnlineOnceBefore = false;
  * Checks whether we can access one of the CDN sites.
  */
 export async function isCDNReachable() {
+    // Corporate build: CDN reachability probing disabled — never fetch unpkg.com/cdn.jsdelivr.com.
+    return false;
     if (isOnlineOnceBefore) {
         return true;
     }
