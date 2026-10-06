@@ -37,7 +37,8 @@ export class ExperimentService implements IExperimentService {
     private readonly settings: IJupyterSettings;
 
     private get enabled() {
-        return this.settings.experiments.enabled && !this.settings.experiments.optOutFrom.includes('All');
+        // Corporate build: experimentation service (vscode-tas-client) disabled — no requests to the TAS endpoint.
+        return false;
     }
     constructor(
         @inject(IConfigurationService) readonly configurationService: IConfigurationService,

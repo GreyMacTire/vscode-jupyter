@@ -130,6 +130,8 @@ export function sendTelemetryEvent<P extends IEventNamePropertyMapping, E extend
         : undefined | undefined,
     ex?: Error
 ) {
+    // Corporate build: telemetry disabled — drop all events; the AppInsights reporter is never created.
+    return;
     if (!isPerfMeasurementOnCI(eventName.toString()) && (isTestExecution() || !isTelemetrySupported())) {
         return;
     }
