@@ -75,6 +75,8 @@ export class InstallPythonControllerCommands implements IExtensionSyncActivation
      * @return {*}  {Promise<boolean>} `true` if Python extension was installed, else not installed.
      */
     private async installPythonExtensionViaKernelPicker(): Promise<boolean | undefined> {
+        // Corporate build: Python extension is not installed from the marketplace automatically.
+        return;
         if (!this.extensionChecker.isPythonExtensionInstalled) {
             sendTelemetryEvent(Telemetry.PythonExtensionNotInstalled, undefined, { action: 'displayed' });
 
