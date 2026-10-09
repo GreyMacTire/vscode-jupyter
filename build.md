@@ -30,5 +30,5 @@ npm run package                    # → ms-toolsai-jupyter-<версия>-Cross
 ## Установка
 
 ```bash
-code --install-extension ms-toolsai-jupyter-2026.6.2026100201-Crossplatform.vsix
+code --install-extension ms-toolsai-jupyter-2026.6.2026100301-Crossplatform.vsix
 ```
