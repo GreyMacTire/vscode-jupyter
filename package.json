@@ -1,7 +1,7 @@
 {
     "name": "jupyter",
     "displayName": "Jupyter",
-    "version": "2026.6.2026071501",
+    "version": "2026.6.2026100201",
     "description": "Jupyter notebook support, interactive programming and computing that supports Intellisense, debugging and more.",
     "publisher": "ms-toolsai",
     "author": {
@@ -2133,7 +2133,7 @@
         "notebookReplDocument"
     ],
     "scripts": {
-        "package": "gulp clean && npm run build && vsce package -o ms-toolsai-jupyter-insiders.vsix",
+        "package": "gulp clean && npm run build && vsce package -o ms-toolsai-jupyter-$(node -p \"require('./package.json').version\")-Crossplatform.vsix",
         "build:stable": "cross-env IS_PRE_RELEASE_VERSION_OF_JUPYTER_EXTENSION=false npm run build",
         "build:prerelease": "cross-env IS_PRE_RELEASE_VERSION_OF_JUPYTER_EXTENSION=true npm run build",
         "build": "concurrently npm:compile-release npm:updatePackageJsonForBundle",

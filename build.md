@@ -15,7 +15,7 @@ nvm use
 npm ci --ignore-scripts --prefer-offline --no-audit
 npx vscode-dts 1.106.0            # API-типы версии релиза (вместо dev — важно!)
 node ./build/ci/postInstall.js     # патчи node_modules + загрузка zmq-бинарников
-npm run package                    # → ms-toolsai-jupyter-insiders.vsix
+npm run package                    # → ms-toolsai-jupyter-<версия>-Crossplatform.vsix
 ```
 
 ## Важно
@@ -30,5 +30,5 @@ npm run package                    # → ms-toolsai-jupyter-insiders.vsix
 ## Установка
 
 ```bash
-code --install-extension ms-toolsai-jupyter-insiders.vsix
+code --install-extension ms-toolsai-jupyter-2026.6.2026100201-Crossplatform.vsix
 ```
