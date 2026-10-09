@@ -23,6 +23,7 @@ docs/**
 .travis.yml
 .vscode-test.mjs
 api/**
+build.md
 CODE_OF_CONDUCT.md
 CONTRIBUTING.md
 CONTRIBUTING - LANGUAGE SERVER.md
