@@ -15,7 +15,6 @@ import { JupyterKernelServiceFactory } from './api/unstable/kernelApi';
 import { ApiAccessService } from './api/unstable/apiAccessService';
 import { WorkspaceActivation } from './activation/workspaceActivation.node';
 import { ExtensionActivationManager } from './activation/activationManager';
-import { DataScienceSurveyBanner, ISurveyBanner } from './survey/dataScienceSurveyBanner.node';
 import { IExtensionContext } from '../platform/common/types';
 import { registerTypes as registerDevToolTypes } from './devTools/serviceRegistry';
 import { registerTypes as registerIntellisenseTypes } from './intellisense/serviceRegistry.node';
@@ -67,8 +66,7 @@ export function registerTypes(context: IExtensionContext, serviceManager: IServi
         CodespaceCommandRegistry
     );
 
-    serviceManager.addSingleton<ISurveyBanner>(ISurveyBanner, DataScienceSurveyBanner);
-    serviceManager.addBinding(ISurveyBanner, IExtensionSyncActivationService);
+    // Corporate build: DataScienceSurveyBanner (survey prompts) not registered.
     // Activation Manager
     serviceManager.add<IExtensionActivationManager>(IExtensionActivationManager, ExtensionActivationManager);
 
